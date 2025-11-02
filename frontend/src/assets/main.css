@@ -1,1 +1,10 @@
 @import 'tailwindcss';
+
+@layer components {
+  .btn-login {
+    @apply rounded-md bg-blue-500 px-5 py-2 text-white transition-colors duration-300 hover:bg-blue-600;
+  }
+  .icon-hover {
+    @apply transition-all duration-300 hover:scale-115 hover:text-blue-500;
+  }
+}
