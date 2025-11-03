@@ -7,4 +7,13 @@
   .icon-hover {
     @apply transition-all duration-300 hover:scale-115 hover:text-blue-500;
   }
+  .link-article {
+    @apply flex flex-col rounded-md bg-white p-4 shadow-sm transition-shadow duration-300 ease-in-out hover:shadow-xl;
+  }
+  .error {
+    @apply text-red-500;
+  }
+  .loading {
+    @apply flex items-center justify-center text-gray-500;
+  }
 }

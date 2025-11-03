@@ -18,4 +18,5 @@ export const translationCondition: Record<string, string> =
     snowfall: 'Снежная падь',
     'snow-showers': 'Снежные ливни',
     hail: 'Мороз',
+    'wet-snow': 'Небольшой снег',
   }

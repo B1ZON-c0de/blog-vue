@@ -1,4 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import LayoutContainer from '@/components/LayoutContainer.vue'
+import ArticleList from '../components/ArticleList.vue'
+</script>
 <template>
-  <h1>Home</h1>
+  <LayoutContainer>
+    <ArticleList />
+  </LayoutContainer>
 </template>

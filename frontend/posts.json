@@ -1,0 +1,182 @@
+[
+  {
+    "title": "Новости веб-разработки",
+    "image": "https://loremflickr.com/352/235/code",
+    "content": "Последние тенденции в разработке веб-приложений",
+    "createdAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "title": "Vue 3 Composition API",
+    "image": "https://loremflickr.com/352/235/programming",
+    "content": "Глубокое погружение в Composition API Vue 3",
+    "createdAt": "2024-01-14T14:20:00Z"
+  },
+  {
+    "title": "TypeScript лучшие практики",
+    "image": "https://loremflickr.com/352/235/typescript",
+    "content": "Как писать качественный TypeScript код",
+    "createdAt": "2024-01-13T09:15:00Z"
+  },
+  {
+    "title": "Tailwind CSS советы",
+    "image": "https://loremflickr.com/352/235/design",
+    "content": "Продвинутые техники работы с Tailwind CSS",
+    "createdAt": "2024-01-12T16:45:00Z"
+  },
+  {
+    "title": "Node.js производительность",
+    "image": "https://loremflickr.com/352/235/server",
+    "content": "Оптимизация Node.js приложений",
+    "createdAt": "2024-01-11T11:20:00Z"
+  },
+  {
+    "title": "MongoDB агрегации",
+    "image": "https://loremflickr.com/352/235/database",
+    "content": "Сложные запросы в MongoDB с агрегациями",
+    "createdAt": "2024-01-10T13:10:00Z"
+  },
+  {
+    "title": "Docker для разработчиков",
+    "image": "https://loremflickr.com/352/235/docker",
+    "content": "Контейнеризация приложений с Docker",
+    "createdAt": "2024-01-09T08:30:00Z"
+  },
+  {
+    "title": "React vs Vue сравнение",
+    "image": "https://loremflickr.com/352/235/framework",
+    "content": "Детальное сравнение React и Vue в 2024",
+    "createdAt": "2024-01-08T15:40:00Z"
+  },
+  {
+    "title": "GraphQL в продакшене",
+    "image": "https://loremflickr.com/352/235/graphql",
+    "content": "Опыт использования GraphQL в больших проектах",
+    "createdAt": "2024-01-07T12:25:00Z"
+  },
+  {
+    "title": "PWA возможности",
+    "image": "https://loremflickr.com/352/235/mobile",
+    "content": "Создание Progressive Web Apps",
+    "createdAt": "2024-01-06T10:50:00Z"
+  },
+  {
+    "title": "WebAssembly применение",
+    "image": "https://loremflickr.com/352/235/wasm",
+    "content": "Использование WebAssembly в веб-приложениях",
+    "createdAt": "2024-01-05T14:15:00Z"
+  },
+  {
+    "title": "SEO для SPA",
+    "image": "https://loremflickr.com/352/235/seo",
+    "content": "Оптимизация одностраничных приложений для поиска",
+    "createdAt": "2024-01-04T09:05:00Z"
+  },
+  {
+    "title": "Тестирование Vue приложений",
+    "image": "https://loremflickr.com/352/235/test",
+    "content": "Unit и E2E тестирование с Vitest и Cypress",
+    "createdAt": "2024-01-03T17:30:00Z"
+  },
+  {
+    "title": "Микросервисы архитектура",
+    "image": "https://loremflickr.com/352/235/microservices",
+    "content": "Построение микросервисной архитектуры",
+    "createdAt": "2024-01-02T11:45:00Z"
+  },
+  {
+    "title": "WebSockets реальное время",
+    "image": "https://loremflickr.com/352/235/websocket",
+    "content": "Реализация real-time функциональности",
+    "createdAt": "2024-01-01T13:20:00Z"
+  },
+  {
+    "title": "NestJS для бэкенда",
+    "image": "https://loremflickr.com/352/235/nestjs",
+    "content": "Создание серверных приложений на NestJS",
+    "createdAt": "2023-12-31T10:10:00Z"
+  },
+  {
+    "title": "Оптимизация загрузки",
+    "image": "https://loremflickr.com/352/235/performance",
+    "content": "Техники оптимизации времени загрузки",
+    "createdAt": "2023-12-30T15:55:00Z"
+  },
+  {
+    "title": "CI/CD пайплайны",
+    "image": "https://loremflickr.com/352/235/cicd",
+    "content": "Настройка непрерывной интеграции и доставки",
+    "createdAt": "2023-12-29T08:40:00Z"
+  },
+  {
+    "title": "JWT аутентификация",
+    "image": "https://loremflickr.com/352/235/security",
+    "content": "Безопасная аутентификация с JWT токенами",
+    "createdAt": "2023-12-28T12:30:00Z"
+  },
+  {
+    "title": "Serverless архитектура",
+    "image": "https://loremflickr.com/352/235/serverless",
+    "content": "Разработка serverless приложений",
+    "createdAt": "2023-12-27T14:50:00Z"
+  },
+  {
+    "title": "Web Components",
+    "image": "https://loremflickr.com/352/235/webcomponents",
+    "content": "Создание переиспользуемых веб-компонентов",
+    "createdAt": "2023-12-26T09:25:00Z"
+  },
+  {
+    "title": "Nuxt 3 особенности",
+    "image": "https://loremflickr.com/352/235/nuxt",
+    "content": "Новые возможности Nuxt 3 для SSR",
+    "createdAt": "2023-12-25T16:15:00Z"
+  },
+  {
+    "title": "Базы данных сравнение",
+    "image": "https://loremflickr.com/352/235/databases",
+    "content": "SQL vs NoSQL: когда что использовать",
+    "createdAt": "2023-12-24T11:00:00Z"
+  },
+  {
+    "title": "Кэширование стратегии",
+    "image": "https://loremflickr.com/352/235/cache",
+    "content": "Эффективные стратегии кэширования данных",
+    "createdAt": "2023-12-23T13:45:00Z"
+  },
+  {
+    "title": "Мониторинг приложений",
+    "image": "https://loremflickr.com/352/235/monitoring",
+    "content": "Инструменты для мониторинга веб-приложений",
+    "createdAt": "2023-12-22T10:20:00Z"
+  },
+  {
+    "title": "WebRTC технологии",
+    "image": "https://loremflickr.com/352/235/webrtc",
+    "content": "Создание видео-чатов с WebRTC",
+    "createdAt": "2023-12-21T15:35:00Z"
+  },
+  {
+    "title": "Next.js 14 обзор",
+    "image": "https://loremflickr.com/352/235/nextjs",
+    "content": "Что нового в Next.js 14",
+    "createdAt": "2023-12-20T08:50:00Z"
+  },
+  {
+    "title": "REST API дизайн",
+    "image": "https://loremflickr.com/352/235/api",
+    "content": "Лучшие практики проектирования REST API",
+    "createdAt": "2023-12-19T12:15:00Z"
+  },
+  {
+    "title": "CSS Grid и Flexbox",
+    "image": "https://loremflickr.com/352/235/css",
+    "content": "Современные техники верстки",
+    "createdAt": "2023-12-18T14:40:00Z"
+  },
+  {
+    "title": "Безопасность веб-приложений",
+    "image": "https://loremflickr.com/352/235/cybersecurity",
+    "content": "Защита от распространенных уязвимостей",
+    "createdAt": "2023-12-17T09:30:00Z"
+  }
+]
