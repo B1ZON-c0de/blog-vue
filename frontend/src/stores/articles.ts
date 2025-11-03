@@ -9,10 +9,16 @@ export const useArticlesStore = defineStore(
     const error = ref<string | null>(null)
     const isLoading = ref<boolean>(false)
 
-    const fetchArticles = async () => {
+    const fetchArticles = async (
+      searchQuery: string = '',
+    ) => {
       isLoading.value = true
       try {
-        const response = await fetch('/posts')
+        const response = await fetch(
+          searchQuery
+            ? `/posts?search=${searchQuery}`
+            : '/posts',
+        )
         if (!response.ok) {
           throw new Error('Не удалось загрузить статьи')
         }

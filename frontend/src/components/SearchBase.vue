@@ -1,0 +1,44 @@
+<script lang="ts" setup>
+import { debouncedSearch } from '@/utils/debouncedSearch'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { ref, watch } from 'vue'
+interface Props {
+  onSearch: (searchQuery: string) => void
+}
+
+const searchQuery = ref<string>('')
+
+const { onSearch } = defineProps<Props>()
+
+const debouncedHandler = debouncedSearch(onSearch, 2000)
+
+const handlerSearch = () => {
+  onSearch(searchQuery.value)
+}
+
+watch(searchQuery, (newQuery) => {
+  debouncedHandler(newQuery)
+})
+</script>
+
+<template>
+  <form
+    @submit.prevent="handlerSearch"
+    action=""
+    class="relative mt-12"
+  >
+    <input
+      class="search pr-20"
+      type="text"
+      placeholder="Поиск по блогу"
+      v-model="searchQuery"
+    />
+    <button
+      type="submit"
+      class="search-btn absolute top-0 right-0 bottom-0"
+    >
+      <FontAwesomeIcon :icon="faSearch" />
+    </button>
+  </form>
+</template>

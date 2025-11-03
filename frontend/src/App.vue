@@ -8,7 +8,7 @@ import LayoutFooter from './components/LayoutFooter.vue'
     class="flex min-h-screen w-full flex-col bg-gray-100"
   >
     <header
-      class="fixed top-0 right-0 left-0 bg-white shadow-md"
+      class="fixed top-0 right-0 left-0 z-99 bg-white shadow-md"
     >
       <LayoutHeader />
     </header>

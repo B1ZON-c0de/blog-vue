@@ -19,6 +19,9 @@ onBeforeMount(() => {
     <div v-else-if="articlesStore.error" class="error">
       {{ articlesStore.error }}
     </div>
+    <div v-else-if="articlesStore.articles.length === 0">
+      Статьи не найдены
+    </div>
     <ul v-else class="grid grid-cols-3 gap-8">
       <li
         v-for="article in articlesStore.articles"

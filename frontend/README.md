@@ -1,48 +1,46 @@
-# frontend
+# Blog
 
-This template should help get you started developing with Vue 3 in Vite.
+Веб-приложение для публикации блоговых статей.
 
-## Recommended IDE Setup
+## Технологии
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Vue 3
+- Vue Router
+- Vuex
+- Tailwind CSS
+- Pinia
+- Vee-Validate
+- Vitest
+- Cypress
+- Node.js
+- Express
+- Mongoose
+- TypeScript
 
-## Recommended Browser Setup
+## Установка
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+1. Установите [Node.js](https://nodejs.org).
+2. Клонируйте репозиторий и перейдите в папку проекта.
+3. Установите зависимости командой `npm install` или `yarn install`.
 
-## Type Support for `.vue` Imports in TS
+## Запуск
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+1. Установите [MongoDB](https://www.mongodb.com/try/download/community).
+2. Создайте файл `.env` в корневой папке проекта и укажите подключение к базе данных.
+3. Запустите команду `npm run dev` или `yarn dev`.
+4. Откройте браузер и перейдите по адресу `http://localhost:3000`.
 
-## Customize configuration
+## Тестирование
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+1. Установите зависимости командой `npm install --only=dev` или `yarn install --dev`.
+2. Запустите команду `npm run test` или `yarn test`.
 
-## Project Setup
+## Сборка
 
-```sh
-pnpm install
-```
+1. Установите зависимости командой `npm install --only=prod` или `yarn install --prod`.
+2. Запустите команду `npm run build` или `yarn build`.
+3. Результат сборки будет размещен в папке `dist`.
 
-### Compile and Hot-Reload for Development
+## Лицензия
 
-```sh
-pnpm dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+[MIT](https://choosealicense.com/licenses/mit/)
