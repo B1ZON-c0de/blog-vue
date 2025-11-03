@@ -4,7 +4,13 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { ref, watch } from 'vue'
 interface Props {
-  onSearch: (searchQuery: string) => void
+  onSearch: ({
+    search,
+    page,
+  }: {
+    search: string
+    page?: number
+  }) => void
 }
 
 const searchQuery = ref<string>('')
@@ -14,18 +20,17 @@ const { onSearch } = defineProps<Props>()
 const debouncedHandler = debouncedSearch(onSearch, 2000)
 
 const handlerSearch = () => {
-  onSearch(searchQuery.value)
+  onSearch({ search: searchQuery.value })
 }
 
 watch(searchQuery, (newQuery) => {
-  debouncedHandler(newQuery)
+  debouncedHandler({ search: newQuery })
 })
 </script>
 
 <template>
   <form
     @submit.prevent="handlerSearch"
-    action=""
     class="relative mt-12"
   >
     <input

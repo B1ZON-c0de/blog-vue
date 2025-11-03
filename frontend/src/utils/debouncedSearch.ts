@@ -1,10 +1,25 @@
 export const debouncedSearch = (
-  callback: (query: string) => void,
+  callback: ({
+    search,
+    page,
+  }: {
+    search: string
+    page?: number
+  }) => void,
   delay: number,
 ) => {
   let timeout: ReturnType<typeof setTimeout>
-  return (query: string) => {
+  return ({
+    search,
+    page,
+  }: {
+    search: string
+    page?: number
+  }) => {
     clearTimeout(timeout)
-    timeout = setTimeout(() => callback(query), delay)
+    timeout = setTimeout(
+      () => callback({ search, page }),
+      delay,
+    )
   }
 }
