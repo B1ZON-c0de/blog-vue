@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-const { currentPage, totalPages, onPageChange } =
-  defineProps<{
-    currentPage: number
-    totalPages: number
-    onPageChange: ({ page }: { page: number }) => void
-  }>()
+const { currentPage, totalPages, onPageChange } = defineProps<{
+  currentPage: number
+  totalPages: number
+  onPageChange: ({ page }: { page: number }) => void
+}>()
 
 const goToPage = (page: number) => {
   onPageChange({ page })
@@ -17,11 +16,7 @@ const goToPage = (page: number) => {
       <button
         @click="goToPage(1)"
         :disabled="currentPage === 1"
-        :class="
-          currentPage === 1
-            ? 'disabled-link'
-            : 'active-link'
-        "
+        :class="currentPage === 1 ? 'disabled-link' : 'active-link'"
       >
         В начало
       </button>
@@ -30,11 +25,7 @@ const goToPage = (page: number) => {
       <button
         @click="goToPage(currentPage - 1)"
         :disabled="currentPage === 1"
-        :class="
-          currentPage === 1
-            ? 'disabled-link'
-            : 'active-link'
-        "
+        :class="currentPage === 1 ? 'disabled-link' : 'active-link'"
       >
         Предыдущая
       </button>
@@ -46,11 +37,7 @@ const goToPage = (page: number) => {
       <button
         @click="goToPage(currentPage + 1)"
         :disabled="currentPage === totalPages"
-        :class="
-          currentPage === totalPages
-            ? 'disabled-link'
-            : 'active-link'
-        "
+        :class="currentPage === totalPages ? 'disabled-link' : 'active-link'"
       >
         Следующая
       </button>
@@ -59,11 +46,7 @@ const goToPage = (page: number) => {
       <button
         @click="goToPage(totalPages)"
         :disabled="currentPage === totalPages"
-        :class="
-          currentPage === totalPages
-            ? 'disabled-link'
-            : 'active-link'
-        "
+        :class="currentPage === totalPages ? 'disabled-link' : 'active-link'"
       >
         В конец
       </button>

@@ -3,14 +3,9 @@ import { debouncedSearch } from '@/utils/debouncedSearch'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { ref, watch } from 'vue'
+import ButtonBase from './ButtonBase.vue'
 interface Props {
-  onSearch: ({
-    search,
-    page,
-  }: {
-    search: string
-    page?: number
-  }) => void
+  onSearch: ({ search, page }: { search: string; page?: number }) => void
 }
 
 const searchQuery = ref<string>('')
@@ -29,21 +24,15 @@ watch(searchQuery, (newQuery) => {
 </script>
 
 <template>
-  <form
-    @submit.prevent="handlerSearch"
-    class="relative mt-12"
-  >
+  <form @submit.prevent="handlerSearch" class="relative mt-12">
     <input
-      class="search pr-20"
+      class="form-input w-full pr-20"
       type="text"
       placeholder="Поиск по блогу"
       v-model="searchQuery"
     />
-    <button
-      type="submit"
-      class="search-btn absolute top-0 right-0 bottom-0"
-    >
+    <ButtonBase type="submit" class="absolute top-0 right-0 bottom-0">
       <FontAwesomeIcon :icon="faSearch" />
-    </button>
+    </ButtonBase>
   </form>
 </template>

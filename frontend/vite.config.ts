@@ -5,13 +5,19 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
 
+const backendUrl = 'http://localhost:3002'
+
 // https://vite.dev/config/
 export default defineConfig({
   server: {
     port: 5174,
     proxy: {
       '/posts': {
-        target: 'http://localhost:3002',
+        target: backendUrl,
+        changeOrigin: true,
+      },
+      '/register': {
+        target: backendUrl,
         changeOrigin: true,
       },
     },

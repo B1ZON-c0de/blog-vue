@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import LayoutContainer from './LayoutContainer.vue'
+import LayoutContainer from '@/components/layout/LayoutContainer.vue'
 import {
   faCode,
   faBackward,
@@ -32,36 +32,21 @@ import { RouterLink } from 'vue-router'
       </div>
       <div>
         <p class="mb-2">
-          <RouterLink
-            to="/login"
-            class="btn-login"
-            aria-label="Войти"
+          <RouterLink to="/login" class="btn-login" aria-label="Войти"
             >Войти</RouterLink
           >
         </p>
         <p>
           <a href="#" @click.prevent="$router.go(-1)">
-            <FontAwesomeIcon
-              :icon="faBackward"
-              class="icon-hover"
-            />
+            <FontAwesomeIcon :icon="faBackward" class="icon-hover" />
           </a>
           &nbsp;
-          <RouterLink
-            to="/posts"
-            aria-label="Написать статью"
-          >
-            <FontAwesomeIcon
-              :icon="faFile"
-              class="icon-hover"
-            />
+          <RouterLink to="/posts" aria-label="Написать статью">
+            <FontAwesomeIcon :icon="faFile" class="icon-hover" />
           </RouterLink>
           &nbsp;
           <RouterLink to="/users" aria-label="Пользователи">
-            <FontAwesomeIcon
-              :icon="faUsers"
-              class="icon-hover"
-            />
+            <FontAwesomeIcon :icon="faUsers" class="icon-hover" />
           </RouterLink>
         </p>
       </div>
