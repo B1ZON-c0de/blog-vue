@@ -70,7 +70,7 @@ const handleLogout = async () => {
           </a>
           &nbsp;
           <RouterLink
-            v-if="userStore.isAuthorized"
+            v-if="userStore.isAuthorized && userStore.isAdmin"
             to="/posts"
             aria-label="Написать статью"
           >
@@ -78,7 +78,7 @@ const handleLogout = async () => {
           </RouterLink>
           &nbsp;
           <RouterLink
-            v-if="userStore.isAuthorized"
+            v-if="userStore.isAuthorized && userStore.isAdmin"
             to="/users"
             aria-label="Пользователи"
           >

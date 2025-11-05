@@ -1,6 +1,7 @@
 import type { User } from '@/types/userTypes'
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import { computed, ref } from 'vue'
+import ROLES from '@/constants/roles'
 
 const initialStateUser: User = {
   id: '',
@@ -13,6 +14,12 @@ export const useUserStore = defineStore('user', () => {
   const user = ref<User>(initialStateUser)
 
   const isAuthorized = computed(() => !!user.value.id)
+  const isAdmin = computed(
+    () => user.value.id && user.value.roleId === ROLES.ADMIN,
+  )
+  const isModerator = computed(
+    () => user.value.id && user.value.roleId === ROLES.MODERATOR,
+  )
 
   const register = async (login: string, password: string) => {
     try {
@@ -83,6 +90,8 @@ export const useUserStore = defineStore('user', () => {
     login,
     logout,
     isAuthorized,
+    isAdmin,
+    isModerator,
   }
 })
 

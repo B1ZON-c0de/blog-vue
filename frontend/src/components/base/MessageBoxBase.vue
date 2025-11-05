@@ -2,7 +2,7 @@
 import { toRefs } from 'vue'
 
 const props = defineProps<{
-  type?: 'success' | 'error' | 'warning' | 'info'
+  type?: string
 }>()
 const { type } = toRefs(props)
 
