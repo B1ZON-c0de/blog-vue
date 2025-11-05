@@ -1,13 +1,27 @@
 <script lang="ts" setup>
 import LayoutContainer from '@/components/layout/LayoutContainer.vue'
+import { useUserStore } from '@/stores/user'
 import {
   faCode,
   faBackward,
   faFile,
   faUsers,
+  faRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
+
+const userStore = useUserStore()
+const router = useRouter()
+const route = useRoute()
+
+const handleLogout = async () => {
+  const response = await userStore.logout()
+
+  if (!response.error && route.meta.requiresAuth) {
+    router.push('/')
+  }
+}
 </script>
 
 <template>
@@ -30,22 +44,44 @@ import { RouterLink } from 'vue-router'
         <p>Написание кода</p>
         <p>Разбор ошибок</p>
       </div>
-      <div>
-        <p class="mb-2">
-          <RouterLink to="/login" class="btn-login" aria-label="Войти"
+      <div class="text-right">
+        <div class="mb-2">
+          <RouterLink
+            v-if="!userStore.isAuthorized"
+            to="/login"
+            class="btn-login"
+            aria-label="Войти"
             >Войти</RouterLink
           >
-        </p>
+          <div v-else>
+            <span>{{ userStore.user.login }}</span>
+            &nbsp; | &nbsp;
+            <button @click="handleLogout">
+              <FontAwesomeIcon
+                :icon="faRightFromBracket"
+                class="icon-hover cursor-pointer"
+              />
+            </button>
+          </div>
+        </div>
         <p>
           <a href="#" @click.prevent="$router.go(-1)">
             <FontAwesomeIcon :icon="faBackward" class="icon-hover" />
           </a>
           &nbsp;
-          <RouterLink to="/posts" aria-label="Написать статью">
+          <RouterLink
+            v-if="userStore.isAuthorized"
+            to="/posts"
+            aria-label="Написать статью"
+          >
             <FontAwesomeIcon :icon="faFile" class="icon-hover" />
           </RouterLink>
           &nbsp;
-          <RouterLink to="/users" aria-label="Пользователи">
+          <RouterLink
+            v-if="userStore.isAuthorized"
+            to="/users"
+            aria-label="Пользователи"
+          >
             <FontAwesomeIcon :icon="faUsers" class="icon-hover" />
           </RouterLink>
         </p>

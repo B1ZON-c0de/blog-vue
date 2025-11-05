@@ -1,5 +1,6 @@
 export interface User {
-  id?: string
+  id: string
   login: string
-  role: 'guest' | 'user' | 'admin' | null
+  roleId: number | null
+  createdAt: string
 }

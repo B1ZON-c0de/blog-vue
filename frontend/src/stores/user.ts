@@ -1,15 +1,22 @@
 import type { User } from '@/types/userTypes'
 import { defineStore, acceptHMRUpdate } from 'pinia'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+
+const initialStateUser: User = {
+  id: '',
+  login: '',
+  roleId: null,
+  createdAt: '',
+}
 
 export const useUserStore = defineStore('user', () => {
-  const user = ref<User>({
-    login: '',
-    role: null,
-  })
+  const user = ref<User>(initialStateUser)
+
+  const isAuthorized = computed(() => !!user.value.id)
+
   const register = async (login: string, password: string) => {
     try {
-      const resp = await fetch('/register', {
+      const resp = await fetch('/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -20,6 +27,49 @@ export const useUserStore = defineStore('user', () => {
         throw new Error('Ошибка регистрации')
       }
       const data = await resp.json()
+      if (!data.error) {
+        user.value = data.user
+      }
+      return data
+    } catch (e) {
+      if (e instanceof Error) {
+        console.log(e.message)
+      }
+    }
+  }
+  const login = async (login: string, password: string) => {
+    try {
+      const resp = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ login, password }),
+      })
+      if (!resp.ok) {
+        throw new Error('Ошибка авторизации')
+      }
+      const data = await resp.json()
+      return data
+    } catch (e) {
+      if (e instanceof Error) {
+        console.log(e.message)
+      }
+    }
+  }
+  const logout = async () => {
+    try {
+      const resp = await fetch('/api/logout', {
+        method: 'POST',
+      })
+      if (!resp.ok) {
+        throw new Error('Ошибка выхода')
+      }
+      const data = await resp.json()
+      if (!data.error) {
+        user.value = initialStateUser
+      }
+
       return data
     } catch (e) {
       if (e instanceof Error) {
@@ -30,6 +80,9 @@ export const useUserStore = defineStore('user', () => {
   return {
     user,
     register,
+    login,
+    logout,
+    isAuthorized,
   }
 })
 

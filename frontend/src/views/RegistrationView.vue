@@ -4,7 +4,7 @@ import InputErrorBase from '@/components/base/InputErrorBase.vue'
 import InputBase from '@/components/base/InputBase.vue'
 import LabelBase from '@/components/base/LabelBase.vue'
 import MessageBoxBase from '@/components/base/MessageBoxBase.vue'
-import { schema } from '@/schema'
+import { registerSchema } from '@/schema'
 import { Form, type SubmissionHandler } from 'vee-validate'
 import { useUserStore } from '@/stores/user'
 import { ref } from 'vue'
@@ -21,7 +21,8 @@ const handleSubmit: SubmissionHandler = async (formData) => {
     if (data === undefined || data.error) {
       throw new Error(data?.error || 'Произошла ошибка при регистрации')
     } else {
-      router.push('/login')
+      userStore.user = data.user
+      router.push('/')
     }
   } catch (e) {
     if (e instanceof Error) {
@@ -35,7 +36,7 @@ const handleSubmit: SubmissionHandler = async (formData) => {
     <h1 class="my-4 text-center text-2xl font-bold">Регистрация</h1>
     <Form
       class="mx-auto max-w-sm rounded-md bg-white p-6 shadow-md"
-      :validation-schema="schema"
+      :validation-schema="registerSchema"
       @submit="handleSubmit"
     >
       <div class="mb-4">
@@ -49,7 +50,7 @@ const handleSubmit: SubmissionHandler = async (formData) => {
         <InputErrorBase name="password" />
       </div>
       <div class="mb-4">
-        <LabelBase for="confirm-password"> Подтверждение пароля </LabelBase>
+        <LabelBase for="confirmPassword"> Подтверждение пароля </LabelBase>
         <InputBase
           type="password"
           name="confirmPassword"
