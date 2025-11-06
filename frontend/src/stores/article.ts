@@ -131,6 +131,33 @@ export const useArticleStore = defineStore('article', () => {
       }
     }
   }
+  const addArticle = async ({ title, content, imageUrl }: Partial<Article>) => {
+    try {
+      const response = await fetch('/api/posts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title,
+          content,
+          imageUrl,
+        }),
+      })
+      if (!response.ok) {
+        throw new Error('Не удалось добавить статью')
+      }
+      const data = await response.json()
+      if (data.error) {
+        console.error(data.error)
+      }
+      return data
+    } catch (e) {
+      if (e instanceof Error) {
+        console.error(e.message)
+      }
+    }
+  }
   return {
     article,
     fetchArticle,
@@ -140,6 +167,7 @@ export const useArticleStore = defineStore('article', () => {
     deleteArticle,
     addComment,
     deleteComment,
+    addArticle,
   }
 })
 

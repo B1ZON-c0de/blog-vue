@@ -25,3 +25,12 @@ export const loginSchema = yup.object({
     .required('Пароль обязателен')
     .min(6, 'Пароль должен содержать не менее 6 символов'),
 })
+
+export const articleSchema = yup.object({
+  title: yup.string().required('Название обязателено'),
+  content: yup.string().required('Содержимое обязателено'),
+  imageUrl: yup
+    .string()
+    .url('Введите корректный URL')
+    .required('URL изображения обязателен'),
+})
