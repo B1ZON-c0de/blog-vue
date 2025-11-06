@@ -4,26 +4,32 @@ import ArticleDetails from '@/components/ArticleDetails.vue'
 import CommentsList from '@/components/CommentsList.vue'
 import CommentsForm from '@/components/CommentsForm.vue'
 import ArticleDetailsForm from '@/components/ArticleDetailsForm.vue'
-import { onBeforeMount } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 import { useArticleStore } from '@/stores/article'
 import { useUserStore } from '@/stores/user'
 
 const props = defineProps<{ id: string }>()
+const notFound = ref<boolean>(false)
 
 const userStore = useUserStore()
 const articleStore = useArticleStore()
 
 onBeforeMount(async () => {
   try {
-    await articleStore.fetchArticle(props.id)
+    const repsonse = await articleStore.fetchArticle(props.id)
+    if (repsonse.error) {
+      notFound.value = true
+    }
   } catch (e) {
     if (e instanceof Error) {
+      notFound.value = true
       console.error(e.message)
     }
   }
 })
 </script>
 <template>
+  <NotFoundView v-if="notFound" />
   <LayoutContainer class="mt-4">
     <ArticleDetailsForm v-if="articleStore.isEditMode" />
     <ArticleDetails v-else />

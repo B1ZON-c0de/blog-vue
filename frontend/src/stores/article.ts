@@ -55,6 +55,7 @@ export const useArticleStore = defineStore('article', () => {
         console.error(data.error)
       }
       article.value = data.data
+      return data
     } catch (e) {
       if (e instanceof Error) {
         console.error(e.message)
