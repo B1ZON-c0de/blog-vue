@@ -8,6 +8,7 @@ import MessageBoxBase from '@/components/base/MessageBoxBase.vue'
 import { formatDate } from '@/utils/formatDate'
 import { useRolesStore } from '@/stores/roles'
 import type { User } from '@/types/userTypes'
+import InputBase from '@/components/base/InputBase.vue'
 
 const usersStore = useUsersStore()
 const rolesStore = useRolesStore()
@@ -98,7 +99,8 @@ onBeforeMount(() => {
                 class="relative flex gap-2"
                 @submit.prevent="handleUserUpdate(user)"
               >
-                <select
+                <InputBase
+                  as="select"
                   v-model="user.roleId"
                   :name="`user-${user.id}-role`"
                   class="w-full rounded-md border border-gray-400 px-3 py-2"
@@ -110,7 +112,7 @@ onBeforeMount(() => {
                   >
                     {{ role.name }}
                   </option>
-                </select>
+                </InputBase>
                 <button type="submit" class="icon-btn">
                   <FontAwesomeIcon :icon="faSave" />
                 </button>

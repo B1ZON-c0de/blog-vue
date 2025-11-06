@@ -7,5 +7,7 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-  <Field :name="props.name || ''" class="form-input" />
+  <Field :name="props.name || ''" class="form-input">
+    <slot></slot>
+  </Field>
 </template>
