@@ -40,4 +40,7 @@
   .icon-btn {
     @apply cursor-pointer rounded-md bg-blue-500 px-2 py-1 text-white transition-colors duration-300 hover:bg-blue-600;
   }
+  .btn-modal {
+    @apply cursor-pointer rounded-md bg-blue-500 px-4 py-2 text-white transition-colors duration-300 hover:bg-blue-600;
+  }
 }
