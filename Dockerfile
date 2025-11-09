@@ -9,7 +9,7 @@ COPY . .
 WORKDIR /usr/src/app/frontend
 
 RUN pnpm install
-RUN pnpm run build
+RUN pnpm run build-only
 
 WORKDIR /usr/src/app/backend
 
